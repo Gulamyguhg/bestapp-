@@ -66,7 +66,7 @@
   .slider {
     width: 280px;
     height: 280px;
-    margin: 0 auto;
+    margin: 0 auto;          /* center horizontally */
     border-radius: 18px;
     overflow: hidden;
     position: relative;
@@ -79,7 +79,7 @@
   .slider img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;        /* fill square properly */
     border-radius: 18px;
     position: absolute;
     opacity: 0;
@@ -107,7 +107,7 @@
 </head>
 <body>
 
-  <h1>💰 Download App & Earn Daily Rewards</h1>
+  <h1>💰 Download For Best Game click Download</h1>
 
   <!-- 🔹 SECTION 1 -->
   <div class="section">
@@ -126,7 +126,7 @@
       <img src="https://i.ibb.co/CG3ts8w/image5.jpg">
     </div>
 
-    <div class="caption">💸 Proof of Winning ₹5000 Instantly!</div>
+    <div class="caption">💸 Proof of Winning ₹30000 just 30day!</div>
   </div>
 
   <!-- 🔹 SECTION 2 -->
@@ -151,6 +151,7 @@
   </footer>
 
 <script>
+  // 🔄 Auto image slideshow
   function startSlider(id) {
     const slider = document.getElementById(id);
     const images = slider.querySelectorAll('img');
