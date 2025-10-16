@@ -1,171 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Download & Earn - Proof Gallery</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #0f172a, #1e293b);
-    color: white;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 28px;
-    color: #facc15;
-    margin: 20px 0;
-  }
-
-  .section {
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 420px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  }
-
-  .download-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .download-btn {
-    display: inline-block;
-    background: linear-gradient(90deg, #22c55e, #16a34a);
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 17px;
-    box-shadow: 0 5px 15px rgba(0,255,128,0.3);
-    transition: transform 0.2s;
-  }
-
-  .download-btn:hover {
-    transform: scale(1.08);
-  }
-
-  .app-logo {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #16a34a;
-    box-shadow: 0 0 10px rgba(22,163,74,0.5);
-  }
-
-  /* Centered square slider */
-  .slider {
-    width: 280px;
-    height: 280px;
-    margin: 0 auto;          /* center horizontally */
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;        /* fill square properly */
-    border-radius: 18px;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .slider img.active {
-    opacity: 1;
-  }
-
-  .caption {
-    margin-top: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fbbf24;
-    text-shadow: 0 0 10px rgba(251,191,36,0.4);
-  }
-
-  footer {
-    margin: 30px 0;
-    color: #94a3b8;
-    font-size: 13px;
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Real Wins • Join & Withdraw</title>
+  <meta name="description" content="Real withdrawal proof. Join with code and try. Verified payouts.">
+  <style>
+    :root{
+      --bg:#0f1720; --card:#111827; --muted:#9ca3af; --accent:#10b981; --btn:#ef4444;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:linear-gradient(180deg,#071020 0%, #071521 100%);
+      color:#e6eef6; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{max-width:900px;margin:18px auto;padding:18px;}
+    header{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 18px;font-size:14px}
+    .card{background:var(--card);border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .stats{display:flex;gap:10px;flex-wrap:wrap}
+    .stat{flex:1;min-width:120px;padding:12px;border-radius:10px;background:var(--glass);text-align:center}
+    .stat strong{display:block;font-size:18px}
+    .cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:10px;
+      text-decoration:none;color:#fff;font-weight:600;
+      background:linear-gradient(90deg,var(--btn),#d62b2b);box-shadow:0 8px 20px rgba(214,43,43,0.15)
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent);font-weight:600}
+    .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+    .proof-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .badges{display:flex;gap:8px;align-items:center;margin-top:12px}
+    .badge{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;font-size:13px;color:var(--muted)}
+    .testimonials{margin-top:12px}
+    .test{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);margin-bottom:8px}
+    footer{color:var(--muted);font-size:13px;margin-top:12px}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    @media(min-width:720px){
+      .wrap{padding:28px}
+      .proof-grid img{height:220px}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:30}
+    .modal.open{display:flex}
+    .modal img{max-width:95%;max-height:85%;border-radius:8px}
+    .small{font-size:13px;color:var(--muted)}
+    .disclaimer{margin-top:10px;font-size:12px;color:#fca5a5}
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo">R</div>
+      <div>
+        <h1>Verified Wins • Try with code</h1>
+        <p class="lead">Real withdrawal proof + step-by-step link. Click below, install & withdraw.</p>
+      </div>
+    </header>
 
-  <h1>💰 Download For Best Game click Download</h1>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div>
+          <div class="small">My Result</div>
+          <div style="font-size:18px;font-weight:700">₹20,000 <span style="color:var(--muted);font-weight:500">won</span></div>
+          <div class="small" style="margin-top:6px">Recent withdrawal: ₹1,932.89 ✅</div>
+        </div>
 
-  <!-- 🔹 SECTION 1 -->
-  <div class="section">
-    <div class="download-row">
-      <a href="https://invite.p77ggg.com/?code=8KNX7DZ" class="download-btn" target="_blank">
-        📲 Download App 1
-      </a>
-      <img src="https://i.ibb.co/M5BP7vT9/app1-logo.png" alt="App Logo 1" class="app-logo">
+        <div style="text-align:right">
+          <div class="small">Invite code</div>
+          <div style="font-weight:800;font-size:18px">8KNX7DZ</div>
+          <div class="cta">
+            <a class="btn" id="downloadBtn" href="https://invite.p77ggg.com/?code=8KNX7DZ" target="_blank" rel="noopener">
+              ⤓ Download & Install
+            </a>
+            <a class="btn secondary" id="howBtn" href="#how">How it works</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="badges" aria-hidden>
+        <div class="badge">Fast payouts</div>
+        <div class="badge">Verified screenshots</div>
+        <div class="badge">No spam</div>
+      </div>
     </div>
 
-    <div class="slider" id="slider1">
-      <img src="https://i.ibb.co/vCdtTwM1/image1.jpg" class="active">
-      <img src="https://i.ibb.co/LXQYMr5r/image2.jpg">
-      <img src="https://i.ibb.co/QvXvrLT7/image3.jpg">
-      <img src="https://i.ibb.co/wh9wJ3Gs/image4.jpg">
-      <img src="https://i.ibb.co/CG3ts8w/image5.jpg">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <strong>Withdrawal Proof</strong>
+          <div class="small">Tap images to enlarge</div>
+        </div>
+        <div class="small">Remaining withdrawal limit shown</div>
+      </div>
+
+      <div class="proof-grid" style="margin-top:12px">
+        <img src="https://passive-brown-u7qlpkmzwi.edgeone.app/IMG_3526.jpeg" alt="withdrawal proof" data-full="https://passive-brown-u7qlpkmzwi.edgeone.app/IMG_3526.jpeg">
+        <img src="https://structural-black-tuftep5cvd.edgeone.app/IMG_3529.jpeg" alt="game win" data-full="https://structural-black-tuftep5cvd.edgeone.app/IMG_3529.jpeg">
+      </div>
+
+      <div style="margin-top:12px" class="testimonials">
+        <div><strong>What people say</strong></div>
+        <div class="test">"Started with ₹300 -- cashed out first time in 2 days." -- Aman</div>
+        <div class="test">"Verified payout. Took < 24 hours to reach my account." -- Priya</div>
+      </div>
     </div>
 
-    <div class="caption">💸 Proof of Winning ₹30000 just 30day!</div>
+    <div class="card" id="how">
+      <strong>How to start (3 steps)</strong>
+      <ol style="margin:8px 0 0 18px;color:var(--muted)">
+        <li>Click "Download & Install".</li>
+        <li>Sign up with code <strong>8KNX7DZ</strong>. Deposit small to test.</li>
+        <li>Follow simple strategy, withdraw when eligible -- I withdrew successfully.</li>
+      </ol>
+      <div class="disclaimer">Disclaimer: Play responsibly. Minimum age 18+. Wins are not guaranteed -- results vary. This page only shares personal proof.</div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <strong>Frequently asked</strong>
+          <div class="small" style="margin-top:6px">Q: Will I get paid? <br>A: Many users report successful withdrawals (see screenshots).</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:13px;color:var(--muted)">Need help?</div>
+          <a class="btn secondary" href="https://instagram.com/rabul__khan" target="_blank">Message on IG</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="year"></span> Rabbani -- Verified proof page • For information only.</div>
+    </footer>
   </div>
 
-  <!-- 🔹 SECTION 2 -->
-  <div class="section">
-    <div class="download-row">
-      <a href="https://1cric37.com/?dl=21rv51or" class="download-btn" target="_blank">
-        🎯 Download App 2
-      </a>
-      <img src="https://i.ibb.co/8DC3R4mY/app2-logo.png" alt="App Logo 2" class="app-logo">
-    </div>
-
-    <div class="slider" id="slider2">
-      <img src="https://i.ibb.co/bf4wb4D/image6.jpg" class="active">
-      <img src="https://i.ibb.co/svxq88NH/image7.jpg">
-    </div>
-
-    <div class="caption">⚡ Instant Withdraw Proof – 100% Real!</div>
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="proof">
   </div>
 
-  <footer>
-    © 2025 EarnWithRBN • All Rights Reserved
-  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-  // 🔄 Auto image slideshow
-  function startSlider(id) {
-    const slider = document.getElementById(id);
-    const images = slider.querySelectorAll('img');
-    let index = 0;
-    setInterval(() => {
-      images[index].classList.remove('active');
-      index = (index + 1) % images.length;
-      images[index].classList.add('active');
-    }, 2500);
-  }
+    document.querySelectorAll('.proof-grid img').forEach(img=>{
+      img.addEventListener('click', (e)=>{
+        const src = e.currentTarget.getAttribute('data-full') || e.currentTarget.src;
+        const modal = document.getElementById('modal');
+        document.getElementById('modalImg').src = src;
+        modal.classList.add('open');
+      })
+    });
 
-  startSlider('slider1');
-  startSlider('slider2');
-</script>
+    function closeModal(){
+      const modal = document.getElementById('modal');
+      modal.classList.remove('open');
+      document.getElementById('modalImg').src = '';
+    }
 
+    const downloadBtn = document.getElementById('downloadBtn');
+    let clicks = 0;
+    downloadBtn.addEventListener('click', ()=> {
+      clicks++;
+      downloadBtn.textContent = "Opening...";
+      setTimeout(()=> downloadBtn.textContent = "⤓ Download & Install", 2000);
+    });
+  </script>
 </body>
 </html>
